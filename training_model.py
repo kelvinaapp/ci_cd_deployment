@@ -10,7 +10,6 @@ descriptions = df['Product Description'].tolist()
 
 def preprocess(descriptions):
   encodings = tokenizer(descriptions, truncation=True, padding=True)
-  # return tokenizer(descriptions, return_tensors="pt", truncation=True, padding=True)
   return Dataset.from_dict(encodings)
 
 train_dataset = preprocess(descriptions)
